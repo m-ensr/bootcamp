@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 200px;
+            height: 50px;
+            display: block;
+            background-color: antiquewhite;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-family: fantasy;
+        }
+
+        button{
+            width: 150px;
+            height: 70px;
+            margin: 10px;
+            margin-left: 0px;
+            font-family: fantasy;
+            font-size: 15px;
+            background-color: antiquewhite;
+            
+        }
+        .container{
+            padding: 40px 80px;
+        }
+        #bottom{
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        #buttons{
+            display: flex;
+        
+        }
+        #result{
+            font-size: 50px;
+            font-family: fantasy;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="top">
+            <input id="num1" type="text" value="">
+            <input id="num2" type="text" value="">
+        </div>
+        <div id="bottom">
+            <div id="buttons">
+                <button onclick="sum()">sum</button>
+                <button onclick="subtraction()">subtraction</button>
+                <button onclick="multiplication()">multiplication</button>
+                <button onclick="division()">division</button>
+            </div>
+            <div>
+                <h1 id="result">0</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        var num1 = document.getElementById("num1");
+        var num2 = document.getElementById('num2');
+        var result = document.getElementById("result");
+        function sum(){
+            result.innerHTML = parseInt(num1.value)+parseInt(num2.value);   
+        }
+        function subtraction(){
+            result.innerHTML = parseInt(num1.value)-parseInt(num2.value);   
+        }
+        function multiplication(){
+            result.innerHTML = parseInt(num1.value)*parseInt(num2.value);   
+        }
+        function division(){
+            result.innerHTML = parseInt(num1.value)/parseInt(num2.value);   
+        }
+      
+        
+    </script>
+</body>
+</html>
