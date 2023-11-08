@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the Lottery</title>
+    <style>
+        .container{
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: space-evenly;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            font-size: 60px;
+            margin-left: 20px;
+            margin-right: 20px;
+            border: 3px solid silver;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: fantasy;
+        }
+        button{
+            height: 100px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: fantasy;
+            font-size: 20px;
+            background-color: tomato;
+            
+        }
+    </style>
+</head>
+<div class="container">
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+    <div class="box" id="box5"></div>
+    <div class="box" id="box6"></div>
+</div>
+<div style="display: flex; justify-content: center;">
+    <button onclick="generate()">DRAW</button>
+</div>
+<body>
+    <script>
+        
+ 
+    function generate(){
+        var randomNumbers = []
+        i = 0;
+      
+            while(i<6){
+            var randomNumber = Math.floor(Math.random() * 49)
+            if (!randomNumbers.includes(randomNumber)) {
+                randomNumbers.push(randomNumber)
+                document.getElementById("box"+ (i+1)).innerHTML = randomNumber
+              
+                i++
+            }
+            
+
+        }
+    }
+    
+      
+     
+    </script>
+</body>
+
+</html>
