@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: rgb(124, 252, 0);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        margin-top: 50px;
+        
+    }
+
+    button {
+        background-color: green;
+        color: black;
+
+        margin-top: 500px;
+        height: 70px;
+        width: 150px;
+        font-size: 20px;
+        font-family: fantasy;
+        display: flex;
+        justify-content : center;
+        align-items: center;
+    }
+
+    .veliEfendi {
+        display: flex;
+        position: relative;
+    }
+
+    .horses {
+        
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(124, 252, 0); 
+
+    }
+
+    img {
+        max-width: 150px;
+        max-height: 150px;
+        margin-bottom: 70px;
+        
+    }
+
+    .raceline {
+        width: 10px;
+        height: 700px;
+        background-color: black;
+        position: absolute;
+        right: 30px;
+    }
+</style>
+
+<body>
+
+    <div class="veliEfendi">
+
+        <div>
+            <button onclick="startRace()"
+        style=" border-radius: 10px; width: 100px;">DESTUR</button>
+        </div>
+
+        <div class="horses">
+
+            <div id="horse1"><img
+                    src="https://e7.pngegg.com/pngimages/697/58/png-clipart-camargue-horse-iphone-7-white-running-horse-horse-animals.png"
+                    alt=""></div>
+            <div id="horse2"><img
+                    src="https://w1.pngwing.com/pngs/176/620/png-transparent-horse-arabian-horse-pony-andalusian-horse-horse-racing-equestrian-tennessee-walking-horse-horse.png"
+                    alt=""></div>
+            <div id="horse3"><img
+                    src="https://w7.pngwing.com/pngs/607/886/png-transparent-horse-brown-isolated-runs-brown-horse.png"
+                    alt=""></div>
+        </div>
+        <div class="raceline"></div>
+      
+    </div>
+
+    </div>
+
+</body>
+
+
+<script>
+    var horse1= 0;
+    var horse2 = 0;
+    var horse3 = 0;
+
+    function startRace() {
+
+        raceFinished = false;
+
+
+        setInterval(() => {
+            var h1 = Math.floor(Math.random() * 30);
+            var h2 = Math.floor(Math.random() * 30);
+            var h3 = Math.floor(Math.random() * 30);
+
+            horse1 = horse1 + h1;
+            horse2 = horse2 + h2;
+            horse3 = horse3 + h3;
+
+            document.getElementById("horse1").style.marginLeft = horse1 + "px";
+            document.getElementById("horse2").style.marginLeft = horse2 + "px";
+            document.getElementById("horse3").style.marginLeft = horse3 + "px";
+
+        }, 500);
+    }
+
+
+</script>
+
+</html>
