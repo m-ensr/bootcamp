@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide Show</title>
+    <style>
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        width: 100%;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <img
+        src="https://i.sozcucdn.com/wp-content/uploads/2020/06/30/iecrop/shrek-filmi_16_9_1593520946.jpg?w=1200&h=900&mode=crop&scale=both"
+        alt=""
+        id="photo1"
+      />
+      <img
+        src="https://img3.aksam.com.tr/imgsdisk/2023/11/09/t25_shrek-5-ne-zaman-cikacak--881.jpg"
+        alt=""
+        id="photo2"
+      />
+      <img
+        src="https://www.kurabaz.com/images/haberler/amp/2023/04/dreamworks-shrek-5-in-calismalarina-basladi_amp.jpg"
+        alt=""
+        id="photo3"
+      />
+      <img
+        src="https://imagenes.noticiasrcn.com/ImgNoticias/rumor%20de%20shrek%205.jpg?VersionId=4MtqZ3toLQuGDVWWimnITIYmcw1Da1FG"
+        alt=""
+        id="photo4"
+      />
+    </div>
+  </body>
+  <script>
+    let currentPhoto = 1;
+    setInterval(() => {
+      document.getElementById(`photo${currentPhoto}`).style.display = "none";
+      currentPhoto = (currentPhoto % 4) + 1;
+      document.getElementById(`photo${currentPhoto}`).style.display = "block";
+    }, 2000);
+  </script>
+</html>
