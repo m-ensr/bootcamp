@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+
+  
+  button {
+    background-color: blueviolet;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: tomato;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    background-color: aliceblue;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+</style>
+    <div>
+      <label for="">Number:</label>
+      <div id="number"></div>
+    </div>
+    <div>
+      <button id="buton" onclick="add()">Add</button>
+    </div>
+    <ul></ul>
+  </body>
+  <script>
+          var randomNumbers = [];
+    function add() {
+
+      var number = document.getElementById("number").value;
+      var random = Math.floor(Math.random() * 100);
+
+        if(randomNumbers.length>15){
+            return alert("at most 15 dear :( ");
+        }
+
+      for (i = 0; i < 16; i++) {
+        if (!randomNumbers.includes(random)) {
+          randomNumbers.push(random);
+        }
+      }
+      var li = document.createElement("li");
+      li.innerHTML = random;
+
+      document.querySelector("ul").appendChild(li);
+      document.getElementById("number").value = "";
+    }
+  </script>
+</html>
